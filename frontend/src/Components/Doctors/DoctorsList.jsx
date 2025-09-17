@@ -1,5 +1,5 @@
 import React from 'react'
-import {doctors} from '../../assets/Data/doctors'
+import {doctors} from '../../assets/Data/Doctors.jsx'
 import DoctorCard from './DoctorCard'
 
 function DoctorsList() {

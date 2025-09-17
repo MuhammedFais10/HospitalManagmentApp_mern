@@ -8,11 +8,14 @@ import icon03 from "../assets/Images/icon03.png";
 import videoIcon from "../assets/Images/video-icon.png";
 import featureImg from "../assets/Images/feature-img.png";
 import avatarIcon from "../assets/Images/avatar-icon.png";
+import faqImg from "../assets/Images/faq-img.png";
 import { BsArrowRight } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import About from "../Components/About/About";
 import ServiceList from "../Components/Services/ServiceList";
 import DoctorsList from "../Components/Doctors/DoctorsList";
+import FaqList from "../Components/Faq/FaqList";
+import Testimonial from "../Components/Testimonial/Testimonial";
 
 function Home() {
   return (
@@ -27,7 +30,7 @@ function Home() {
             <div>
               <div className="lg:w-[500px]">
                 <h1 className="text-[36px] leading-[46px] text-headingColor font-[800] md:text-[60px] md:leading-[70px]">
-                  We help patients live a healthy , loneger life
+                  We help patients live a healthy , longer life
                 </h1>
                 <p className="text__para">
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit.
@@ -63,7 +66,7 @@ function Home() {
                     100%
                   </h2>
                   <span className="w-[100px] h-2 bg-irisBlueColor rounded-full block mt-[-14px] "></span>
-                  <p className="text__para">Patients Satisfation</p>
+                  <p className="text__para">Patients Satisfaction</p>
                 </div>
               </div>
             </div>
@@ -87,7 +90,7 @@ function Home() {
         <div className="container">
           <div className="lg:w-[470px] mx-auto">
             <h2 className="heading teaxt-center">
-              Providing the best medicsl services
+              Providing the best medical services
             </h2>
             <p className="text__para">
               World-class care for everyone. Our health System offers unmatched,
@@ -253,20 +256,49 @@ function Home() {
       {/* ====feature Section end======== */}
 
       {/* =======our greate doctors============ */}
-<div className="container">
-      <div className="xl:w-[470px] mx-auto">
-            <h2 className="heading text-center">Our great doctors </h2>
+      <div className="container">
+        <div className="xl:w-[470px] mx-auto">
+          <h2 className="heading text-center">Our great doctors </h2>
+          <p className="text__para text-center">
+            World-class care for everyone. Our health System offers unmachted,
+            expert health care.
+          </p>
+        </div>
+
+        <DoctorsList />
+      </div>
+      {/* =======our greate doctors ends============ */}
+
+      {/* ======faq section========= */}
+
+      <div className="container">
+        <div className="flex justify-between gap-[50px] lg:gap-0">
+          <div className="w-1/2 hidden md:block ">
+            <img src={faqImg} alt="" />
+          </div>
+          <div className="w-full md:w-1/2">
+            <h2 className="heading">Most questions by our beloved patients</h2>
+            <FaqList />
+          </div>
+        </div>
+      </div>
+
+      {/* ======faq section ends========= */}
+
+      {/* ====testimonial =============== */}
+      <section>
+        <div className="container">
+          <div className="xl:w-[470px] mx-auto">
+            <h2 className="heading text-center">What our patient say </h2>
             <p className="text__para text-center">
               World-class care for everyone. Our health System offers unmachted,
               expert health care.
             </p>
           </div>
-
-          <DoctorsList  />  
-</div>
-        {/* =======our greate doctors ends============ */}
-
-        
+          <Testimonial/>
+        </div>
+      </section>
+      {/* ====testimonial ends =============== */}
     </>
   );
 }

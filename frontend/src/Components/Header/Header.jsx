@@ -27,29 +27,27 @@ function Header() {
   const headerRef = useRef(null);
   const menuRef = useRef(null);
 
-  const handleStickyHeader = () => {
-    window.addEventListener("scroll", () => {
+  
+  useEffect(() => {
+    const handleScroll = () => {
       if (
         document.body.scrollTop > 80 ||
         document.documentElement.scrollTop > 80
       ) {
-        headerRef.current.classList.add("sticky__header");
+        headerRef.current?.classList.add("sticky__header");
       } else {
-        headerRef.current.classList.remove("sticky__header");
+        headerRef.current?.classList.remove("sticky__header");
       }
-    });
-  };
-  // useEffect(() => {
-  //   handleStickyHeader();
-  //   return () => window.removeEventListener("scroll", handleStickyHeader);
-  // });
-    useEffect(() => {
-    window.addEventListener("scroll", handleStickyHeader);
-    return () => window.removeEventListener("scroll", handleStickyHeader);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
 
-  const toggleMenu = () => menuRef.current.classList.toggle("show__menu");
+  const toggleMenu = () => {
+    menuRef.current?.classList.toggle("show__menu");
+  };
   return (
     <header className="header py-4 w-full flex items-center " ref={headerRef}>
       <div className="container">
